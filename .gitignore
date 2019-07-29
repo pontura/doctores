@@ -56,3 +56,9 @@ Assets/models/animaciones/character.FBX
 Assets/models/animaciones/character.FBX.meta
 Assets/Plugins/iOS/Fabric/Crashlytics.framework/Crashlytics
 *.log
+.vs/doctores/v15/Server/sqlite3/db.lock
+.vs/doctores/v15/Server/sqlite3/storage.ide
+.vs/doctores/v15/Server/sqlite3/storage.ide-shm
+.vs/doctores/v15/Server/sqlite3/storage.ide-wal
+Logs/Packages-Update.log
+Logs/Packages-Update.log
