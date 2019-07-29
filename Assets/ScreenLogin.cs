@@ -8,5 +8,9 @@ public class ScreenLogin : ScreenBase
     {
 
     }
+    public void LoginPressed()
+    {
+        MainEvents.LoadScreen(2, true);
+    }
 
 }
