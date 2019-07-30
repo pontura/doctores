@@ -20,6 +20,7 @@ public class UI : MonoBehaviour
     }
     void Awake()
     {
+        UnityEngine.XR.XRSettings.enabled = false;
         if (!mInstance)
             mInstance = this;
         else
@@ -27,7 +28,6 @@ public class UI : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        DontDestroyOnLoad(this.gameObject);
         screensManager = GetComponent<ScreensManager>();
     }
 }

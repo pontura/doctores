@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScreenBase : MonoBehaviour
 {
-	public string backSceneName;
     [HideInInspector]
     public int id;
 	ScreensManager screensManager;

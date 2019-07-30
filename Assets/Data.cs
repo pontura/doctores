@@ -9,8 +9,10 @@ public class Data : MonoBehaviour
 
     const string PREFAB_PATH = "Data";    
     static Data mInstance = null;
+    public ScenesManager scenesManager;
+    public Settings settings;
 
-	public static Data Instance
+    public static Data Instance
 	{
 		get
 		{
@@ -42,6 +44,8 @@ public class Data : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this.gameObject);
+        scenesManager = GetComponent<ScenesManager>();
+        settings = GetComponent<Settings>();
     }
 
 }
