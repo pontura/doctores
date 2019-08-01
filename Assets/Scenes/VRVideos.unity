@@ -189,7 +189,6 @@ GameObject:
   - component: {fileID: 37604807}
   - component: {fileID: 37604805}
   - component: {fileID: 37604806}
-  - component: {fileID: 37604808}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -210,13 +209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusText: {fileID: 1513988326}
-  videoType: 0
-  videoURL: jar:file://${Application.dataPath}!/assets/3D_Waterfront.mp4
-  videoContentID: 
+  videoType: 3
+  videoURL: jar:file://${Application.dataPath}!/assets/video.mp4
+  videoContentID: jar:file://${Application.dataPath}!/assets/video.mp4
   videoProviderId: 
-  initialResolution: 4096
-  adjustAspectRatio: 0
-  useSecurePath: 0
+  initialResolution: 1
+  adjustAspectRatio: 1
+  useSecurePath: 1
 --- !u!114 &37604806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37604804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e71f5afb881f443bbce909fe451d8fe, type: 3}
   m_Name: 
@@ -268,26 +267,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &37604808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37604804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 410d5a91205334dda9fd1bf3d325809a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statusText: {fileID: 1513988326}
-  videoType: 0
-  videoURL: https://storage.googleapis.com/daydream-deveng.appspot.com/japan360/dash/japan_day06_eagle2_shot0005-2880px_40000kbps.mpd
-  videoContentID: 
-  videoProviderId: 
-  initialResolution: 4096
-  adjustAspectRatio: 0
-  useSecurePath: 0
 --- !u!33 &37604809
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2280,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1607042465
 Transform:
   m_ObjectHideFlags: 0
@@ -2313,6 +2292,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 831898089}
+    - target: {fileID: 1164402124, guid: 1a62dfff2c15946c6a3caf52aef4bcf4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279982647, guid: 1a62dfff2c15946c6a3caf52aef4bcf4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1a62dfff2c15946c6a3caf52aef4bcf4, type: 3}
