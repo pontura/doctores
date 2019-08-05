@@ -411,6 +411,9 @@ public class GvrVideoPlayerTexture : MonoBehaviour
     /// <returns>An integer pointer to the Video Player.</returns>
     public static IntPtr CreateVideoPlayer()
     {
+        
+       // Debug.Log("CreateVideoPlayer:   " + Application.streamingAssetsPath + "/video.mp4");
+
         Debug.Log(NOT_IMPLEMENTED_MSG);
         return IntPtr.Zero;
     }
@@ -687,6 +690,7 @@ public class GvrVideoPlayerTexture : MonoBehaviour
     /// <returns>The processed URL.</returns>
     internal string ProcessURL()
     {
+        return Application.streamingAssetsPath + "/video.mp4";
         return videoURL.Replace("${Application.dataPath}", Application.dataPath);
     }
 

@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: cb550bcd79cb9d74ea7db0dcd16d0507
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRVideos.unity
     guid: 8e576621e882a5d4ba47c484981231b8
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoogleVR/Demos/Scenes/VideoDemo.unity
     guid: c79d901ffb34f428eadaa3a7269a6c7c
   m_configObjects: {}
