@@ -14,7 +14,8 @@ public class ScreenCasos : ScreenBase
     }
     public void Clicked(int id)
     {
-        Data.Instance.scenesManager.Load("VRVideos");
+        MainEvents.ResetAll();
+        Data.Instance.scenesManager.Load("Skybox");        
     }
 
 }

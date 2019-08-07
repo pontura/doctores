@@ -7,6 +7,7 @@ public static class MainEvents
     public static System.Action<ButtonStandard> OnButtonClicked = delegate { };
     public static System.Action<string> OnUIFX = delegate { };
     public static System.Action<int, bool> LoadScreen = delegate { };
+    public static System.Action ResetAll = delegate { };
 }
 
 public class ScreensManager : MonoBehaviour
@@ -23,10 +24,12 @@ public class ScreensManager : MonoBehaviour
     private void Awake()
     {
         MainEvents.LoadScreen += LoadScreen;
+        MainEvents.ResetAll += ResetAll;
     }
     private void OnDestroy()
     {
         MainEvents.LoadScreen -= LoadScreen;
+        MainEvents.ResetAll -= ResetAll;
     }
     void Start()
     {
