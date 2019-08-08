@@ -8,6 +8,7 @@ public static class MainEvents
     public static System.Action<string> OnUIFX = delegate { };
     public static System.Action<int, bool> LoadScreen = delegate { };
     public static System.Action ResetAll = delegate { };
+    public static System.Action BackScreen = delegate { };
 }
 
 public class ScreensManager : MonoBehaviour
@@ -19,33 +20,44 @@ public class ScreensManager : MonoBehaviour
     public bool isAdmin;
     public float timeToTransition = 1;
     public bool loading;
-    int id;
+    public int id=-1;
 
     private void Awake()
     {
         MainEvents.LoadScreen += LoadScreen;
         MainEvents.ResetAll += ResetAll;
+        MainEvents.BackScreen += BackScreen;
     }
     private void OnDestroy()
     {
         MainEvents.LoadScreen -= LoadScreen;
         MainEvents.ResetAll -= ResetAll;
+        MainEvents.BackScreen -= BackScreen;
     }
     void Start()
     {
-        int id = 0;
+        int id_ = 0;
         foreach (ScreenBase screenBase in all)
         {
-            screenBase.Init(this, id);
-            id++;
+            screenBase.Init(this, id_);
+            id_++;
         }
         ResetAll();
         MainEvents.LoadScreen(initScreenID, true);
     }
-	void LoadScreen(int id, bool isRight)
+
+    void BackScreen() {
+        LoadScreen(lastActiveScreen.id, false);
+    }
+
+    void LoadScreen(int id, bool isRight)
 	{
-        this.id = id;
         Debug.Log("LoadScreen " + id + " loading: " + loading + " activeScreen: " + activeScreen);
+        if (this.id == id)
+            return;
+
+        this.id = id;
+        
 
         if (loading)
 			return;

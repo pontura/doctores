@@ -9,9 +9,10 @@ public class MenuBar : MonoBehaviour
     public enum types
     {
         INICIO,
-        CASOS,
+        CURSOS,
         PROFESIONALES,
-        PERFIL
+        PERFIL,
+        SUBIR
     }
     void Start()
     {
@@ -27,7 +28,7 @@ public class MenuBar : MonoBehaviour
             case types.INICIO:
                 items[0].SetState(true);
                 break;
-            case types.CASOS:
+            case types.CURSOS:
                 items[1].SetState(true);
                 break;
             case types.PROFESIONALES:
@@ -35,7 +36,7 @@ public class MenuBar : MonoBehaviour
                 break;
             case types.PERFIL:
                 items[3].SetState(true);
-                break;
+                break;            
         }
     }
     public void Clicked(int id)
@@ -47,14 +48,20 @@ public class MenuBar : MonoBehaviour
                 MainEvents.LoadScreen(2, false);
                 break;
             case 1:
-                Select(types.CASOS);
-                MainEvents.LoadScreen(3, true);
+                Select(types.CURSOS);
+                MainEvents.LoadScreen(5, true);
                 break;
             case 2:
                 Select(types.PROFESIONALES);
+                MainEvents.LoadScreen(8, true);
                 break;
             case 3:
                 Select(types.PERFIL);
+                MainEvents.LoadScreen(4, true);
+                break;
+            case 4:
+                Select(types.SUBIR);
+                MainEvents.LoadScreen(6, true);
                 break;
         }
     }

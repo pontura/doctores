@@ -14,8 +14,9 @@ public class ScreenCasos : ScreenBase
     }
     public void Clicked(int id)
     {
-        MainEvents.ResetAll();
-        Data.Instance.scenesManager.Load("Skybox");        
+        MainEvents.LoadScreen(7, true);
+        //MainEvents.ResetAll();
+        //Data.Instance.scenesManager.Load("Skybox");        
     }
 
 }
