@@ -22,8 +22,7 @@ public class VideoController : MonoBehaviour {
     }
 
     public void Play() {
-        vplayer.Play();
-        Debug.Log("aca");
+        vplayer.Play();        
     }
 
 }

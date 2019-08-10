@@ -12,6 +12,8 @@ public class Data : MonoBehaviour
     public ScenesManager scenesManager;
     public Settings settings;
 
+    public int lastScreenId = -1;
+
     public static Data Instance
 	{
 		get

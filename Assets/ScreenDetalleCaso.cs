@@ -16,6 +16,9 @@ public class ScreenDetalleCaso : ScreenBase {
         } else if (id == -2) {
             MainEvents.ResetAll();
             Data.Instance.scenesManager.Load("Skybox_2D");
+        } else if (id == -3) {
+            MainEvents.ResetAll();
+            Data.Instance.scenesManager.Load("VideoHD");
         } else {
             MainEvents.LoadScreen(id, true);            
         }

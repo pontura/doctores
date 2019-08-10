@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Skybox_2D.unity
     guid: 7a4b85d3d11906041a5af0dfed5b0f6e
+  - enabled: 1
+    path: Assets/Scenes/VideoHD.unity
+    guid: 11383cfdbdbbd294b831d5a7b4fda184
   m_configObjects: {}

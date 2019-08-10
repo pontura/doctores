@@ -25,7 +25,7 @@ namespace GoogleVR.Demos
     {
         private void Start()
         {
-            Input.backButtonLeavesApp = true;
+            Input.backButtonLeavesApp = false;
         }
 
         private void Update()
@@ -33,7 +33,8 @@ namespace GoogleVR.Demos
             // Exit when (X) is tapped.
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Application.Quit();
+                UnityEngine.XR.XRSettings.enabled = false;
+                Data.Instance.LoadLevel("Main");
             }
         }
     }

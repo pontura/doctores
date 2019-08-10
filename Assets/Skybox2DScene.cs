@@ -14,9 +14,15 @@ public class Skybox2DScene : MonoBehaviour {
         vcontroller.Play();
     }
 
-    // Update is called once per frame
-    void Update() {        
-        
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Back();
+        }
     }
-    
+
+    public void Back() {
+        Debug.Log("aca");
+        Data.Instance.LoadLevel("Main");
+    }
+
 }
