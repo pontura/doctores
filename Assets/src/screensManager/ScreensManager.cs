@@ -48,8 +48,8 @@ public class ScreensManager : MonoBehaviour
             id_++;
         }
         ResetAll();
-        if (Data.Instance.lastScreenId > -1) {
-            MainEvents.LoadScreen(Data.Instance.lastScreenId, true);
+        if (Data.Instance.activeScreenId > -1) {
+            MainEvents.LoadScreen(Data.Instance.activeScreenId, true);
             ShowMenuBar(true);
         } else {
             MainEvents.LoadScreen(initScreenID, true);
@@ -85,9 +85,10 @@ public class ScreensManager : MonoBehaviour
 			activeScreen.SetCenterPosition ();
 			activeScreen.MoveTo (isRight, timeToTransition);
 			lastActiveScreen = activeScreen;
-            Data.Instance.lastScreenId = lastActiveScreen.id;
+            
         }
 
+        Data.Instance.activeScreenId = id;
         activeScreen = all [id];
         activeScreen.gameObject.SetActive (true);
         activeScreen.SetInitialPosition (isRight);

@@ -9,7 +9,8 @@ public class VideoController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         //vplayer = GetComponent<VideoPlayer>();
-        vplayer.loopPointReached += EndReached;        
+        vplayer.loopPointReached += EndReached;
+        vplayer.clip = Data.Instance.videoData.selectedClip;
     }
 
     // Update is called once per frame

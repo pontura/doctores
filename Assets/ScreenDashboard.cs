@@ -14,7 +14,7 @@ public class ScreenDashboard : ScreenBase
     }
     public void Clicked(int id)
     {
-        MainEvents.LoadScreen(3, true);
+        MainEvents.LoadScreen(id, true);
     }
 
 }

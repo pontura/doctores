@@ -11,8 +11,10 @@ public class Data : MonoBehaviour
     static Data mInstance = null;
     public ScenesManager scenesManager;
     public Settings settings;
+    public VideoData videoData;
+    public ImageData imageData;
 
-    public int lastScreenId = -1;
+    public int activeScreenId = -1;
 
     public static Data Instance
 	{
@@ -48,6 +50,8 @@ public class Data : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         scenesManager = GetComponent<ScenesManager>();
         settings = GetComponent<Settings>();
+        videoData = GetComponent<VideoData>();
+        imageData = GetComponent<ImageData>();
     }
 
 }

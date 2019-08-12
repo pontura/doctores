@@ -9,19 +9,14 @@ public class ScreenDetalleCaso : ScreenBase {
     public void LoginPressed() {
         MainEvents.LoadScreen(2, true);
     }
+
     public void Clicked(int id) {
-        if (id == -1) {
-            MainEvents.ResetAll();
-            Data.Instance.scenesManager.Load("Skybox");        
-        } else if (id == -2) {
-            MainEvents.ResetAll();
-            Data.Instance.scenesManager.Load("Skybox_2D");
-        } else if (id == -3) {
-            MainEvents.ResetAll();
-            Data.Instance.scenesManager.Load("VideoHD");
-        } else {
-            MainEvents.LoadScreen(id, true);            
-        }
+        string scene = Data.Instance.videoData.SetVideoScene(id);
+        MainEvents.ResetAll();
+        Data.Instance.scenesManager.Load(scene);
     }
 
-}
+    public void ShowImage(int id) {
+        Data.Instance.imageData.ShowImage(id);        
+    }
+}    
