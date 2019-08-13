@@ -29,7 +29,8 @@ public class ImageData : MonoBehaviour
 
     public void ShowImage(int id) {
         ImageData.ImageInfo imgInfo = images.Find(x => x.id == id);
-        selectedImg = imgInfo.clip;
+        if (imgInfo != null) 
+            selectedImg = imgInfo.clip;        
         imagePopup.SetActive(true);
     }
 }
