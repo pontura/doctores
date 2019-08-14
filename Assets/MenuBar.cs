@@ -48,20 +48,20 @@ public class MenuBar : MonoBehaviour
                 MainEvents.LoadScreen(2, false);
                 break;
             case 1:
-                Select(types.CURSOS);
-                MainEvents.LoadScreen(5, true);
+                Select(types.PERFIL);
+                MainEvents.LoadScreen(4, true);
                 break;
             case 2:
-                Select(types.PROFESIONALES);
-                MainEvents.LoadScreen(8, true);
+                Select(types.SUBIR);
+                MainEvents.LoadScreen(6, true);
                 break;
             case 3:
                 Select(types.PERFIL);
                 MainEvents.LoadScreen(4, true);
                 break;
             case 4:
-                Select(types.SUBIR);
-                MainEvents.LoadScreen(6, true);
+                Select(types.PROFESIONALES);
+                MainEvents.LoadScreen(8, true);
                 break;
         }
     }
