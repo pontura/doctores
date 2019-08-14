@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ImagePopup : MonoBehaviour
 {
     public Image image;
+    public ImageData idata;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class ImagePopup : MonoBehaviour
     }
 
     void OnEnable() {
-        image.sprite = Data.Instance.imageData.selectedImg;
+        image.sprite = idata.selectedImg;
         gameObject.SetActive(true);
     }
 

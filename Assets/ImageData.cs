@@ -18,7 +18,11 @@ public class ImageData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Events.ShowImgPopup += ShowImage;
+    }
+
+    private void OnDestroy() {
+        Events.ShowImgPopup -= ShowImage;
     }
 
     // Update is called once per frame

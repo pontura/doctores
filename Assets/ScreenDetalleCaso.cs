@@ -17,6 +17,6 @@ public class ScreenDetalleCaso : ScreenBase {
     }
 
     public void ShowImage(int id) {
-        Data.Instance.imageData.ShowImage(id);        
+        Events.ShowImgPopup(id); 
     }
 }    
