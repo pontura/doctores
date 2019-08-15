@@ -30,9 +30,13 @@ public class ScreenBase : MonoBehaviour
 			destination = -screenWidth;
 		gameObject.transform.localPosition = new Vector2 (destination, 0);
 	}
-	public void MoveTo(bool toRight, float delay = 1)
-	{		
-		float destination = gameObject.transform.localPosition.x-screenWidth;
+    bool loading;
+
+    public void MoveTo(bool toRight, float delay = 1)
+	{
+        loading = true;
+
+        float destination = gameObject.transform.localPosition.x-screenWidth;
 		if (!toRight)
 			destination = gameObject.transform.localPosition.x + screenWidth;		
 
@@ -46,11 +50,14 @@ public class ScreenBase : MonoBehaviour
 	}
 	public void LoadScreen(int screenID, bool toRight)
 	{
+        if (loading)
+            return;
 		MainEvents.LoadScreen (screenID, toRight);
 	}
 	void TransitionDone()
 	{
-		screensManager.OnTransitionDone ();
+        loading = false;
+        screensManager.OnTransitionDone ();
 	}
 	void OnEnable()
 	{
