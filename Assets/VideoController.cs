@@ -11,6 +11,7 @@ public class VideoController : MonoBehaviour {
         //vplayer = GetComponent<VideoPlayer>();
         vplayer.loopPointReached += EndReached;
         vplayer.clip = Data.Instance.videoData.selectedClip;
+        vplayer.audioOutputMode = VideoAudioOutputMode.Direct;
     }
 
     // Update is called once per frame

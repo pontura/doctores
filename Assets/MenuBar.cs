@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuBar : MonoBehaviour
 {
     public MenuBarItem[] items;
+    public ScreensManager screensManager;
 
     public enum types
     {
@@ -20,6 +21,9 @@ public class MenuBar : MonoBehaviour
     }
     void Select(types type)
     {
+        if (screensManager.loading)
+            return;
+
         foreach (MenuBarItem mbi in items)
             mbi.SetState(false);
 
@@ -44,7 +48,10 @@ public class MenuBar : MonoBehaviour
     }
     public void Clicked(int id)
     {
-        switch(id)
+        if (screensManager.loading)
+            return;
+
+        switch (id)
         {
             case 0:
                 Select(types.INICIO);
