@@ -6,12 +6,26 @@ using UnityEngine.Video;
 public class VideoController : MonoBehaviour {
 
     public VideoPlayer vplayer;
-    // Start is called before the first frame update
+    public AudioSource audioSource;
+
     void Start() {
-        //vplayer = GetComponent<VideoPlayer>();
         vplayer.loopPointReached += EndReached;
         vplayer.clip = Data.Instance.videoData.selectedClip;
-        vplayer.audioOutputMode = VideoAudioOutputMode.Direct;
+        vplayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+        vplayer.controlledAudioTrackCount = 1;
+        vplayer.EnableAudioTrack(0, true);
+        vplayer.SetTargetAudioSource(0, audioSource);
+        StartCoroutine(StartPlaying());
+    }
+
+    IEnumerator StartPlaying()
+    {
+        vplayer.Prepare();
+        while (!vplayer.isPrepared)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        vplayer.Play();
     }
 
     // Update is called once per frame
