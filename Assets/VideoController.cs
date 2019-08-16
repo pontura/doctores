@@ -11,21 +11,37 @@ public class VideoController : MonoBehaviour {
     void Start() {
         vplayer.loopPointReached += EndReached;
         vplayer.clip = Data.Instance.videoData.selectedClip;
+        
+        audioSource.playOnAwake = false;
+        vplayer.playOnAwake = false;
+        vplayer.isLooping = true;
+
+        vplayer.renderMode = VideoRenderMode.RenderTexture;
+        vplayer.aspectRatio = VideoAspectRatio.FitOutside;
+
         vplayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
         vplayer.controlledAudioTrackCount = 1;
         vplayer.EnableAudioTrack(0, true);
         vplayer.SetTargetAudioSource(0, audioSource);
-        StartCoroutine(StartPlaying());
+        audioSource.volume = 1f;
+
+        StartCoroutine(PrepareAndPlayVideo());
     }
 
-    IEnumerator StartPlaying()
+    IEnumerator PrepareAndPlayVideo()
     {
         vplayer.Prepare();
+
         while (!vplayer.isPrepared)
         {
-            yield return new WaitForEndOfFrame();
+            Debug.Log("Preparing Video");
+            yield return null;
         }
+
+        Debug.Log("Done prepping.");
+
         vplayer.Play();
+        audioSource.Play();
     }
 
     // Update is called once per frame
